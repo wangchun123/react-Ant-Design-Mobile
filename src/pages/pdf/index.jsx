@@ -14,15 +14,15 @@ export default class Pdf extends React.Component {
 
   componentDidMount() {
 
-    setTimeout(() => {
-      ReactDOM.render(
-        <MobilePDFReader
-          url={require('../../assets/test.pdf')}
-          isShowHeader={false}
-        />,
-        document.body,
-      );
-    }, 2000);
+    // setTimeout(() => {
+    //   ReactDOM.render(
+    //     <MobilePDFReader
+    //       url={require('../../assets/test.pdf')}
+    //       isShowHeader={false}
+    //     />,
+    //     document.body,
+    //   );
+    // }, 2000);
     
   }
 
