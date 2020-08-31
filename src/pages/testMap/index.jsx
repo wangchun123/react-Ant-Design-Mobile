@@ -1,22 +1,33 @@
 import React from 'react';
-import { Map, Marker, NavigationControl, InfoWindow } from 'react-bmap';
+import './index.scss';
 
 export default class TestMap extends React.Component {
   constructor(props) {
     super(props);
+
+    this.myRef = React.createRef();
   }
+  componentWillMount() {}
+
+  componentDidMount() {
+    const { BMap } = window;
+    // var map = new BMap.Map(this.myRef.current);
+    // var point = new BMap.Point(116.404, 39.915);
+    // map.centerAndZoom(point, 15);
+    // console.log('baidu', window.BMap);
+    // console.log('this.myRef', this.myRef);
+    var map = new BMap.Map(this.myRef.current);
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    window.setTimeout(function () {
+      map.panTo(new BMap.Point(116.409, 39.918));
+    }, 2000);
+  }
+
   render() {
     return (
       <>
-        <Map center={{ lng: 116.402544, lat: 39.928216 }} zoom="11" ref={ref => {this.map = ref.map}}>
-          <Marker position={{ lng: 116.402544, lat: 39.928216 }} />
-          <NavigationControl />
-          <InfoWindow
-            position={{ lng: 116.402544, lat: 39.928216 }}
-            text="内容"
-            title="标题"
-          />
-        </Map>
+        <div ref={this.myRef} id="container"></div>
       </>
     );
   }
