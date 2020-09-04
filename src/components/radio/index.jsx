@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './index.less';
+import './index.scss';
 
 const radioLayoutInline = {
   display: 'flex',
@@ -11,7 +11,10 @@ class Radio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSource: [],
+      dataSource:this.props.dataSource.map((item) => ({
+        ...item,
+        check: false,
+      })),
     };
   }
 
