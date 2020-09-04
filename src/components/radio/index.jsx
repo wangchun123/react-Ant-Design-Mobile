@@ -10,11 +10,9 @@ const radioLayoutInline = {
 class Radio extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      dataSource:this.props.dataSource.map((item) => ({
-        ...item,
-        check: false,
-      })),
+      dataSource: this.dealDefaultValue(this.props),
     };
   }
 
@@ -50,6 +48,20 @@ class Radio extends Component {
       });
     }
   }
+
+  dealDefaultValue = (dataComeFrom) => {
+    let dealDataSource = dataComeFrom.dataSource.map((item) => ({
+      ...item,
+      check: false,
+    }));
+
+    dealDataSource.forEach((item) => {
+      if (item.value == dataComeFrom.defaultValue) {
+        item.check = true;
+      }
+    });
+    return dealDataSource || [];
+  };
 
   handelCheck = (item, index) => {
     const { dataSource } = this.state;
