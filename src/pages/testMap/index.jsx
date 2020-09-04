@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 import './index.scss';
 
 export default class TestMap extends React.Component {
@@ -7,7 +9,12 @@ export default class TestMap extends React.Component {
 
     this.myRef = React.createRef();
   }
-  componentWillMount() {}
+  componentWillMount() {
+    axios({
+      method: 'post',
+      url: '/crops/api/hallmarket/queryHallMktProgList',
+    });
+  }
 
   componentDidMount() {
     const { BMap } = window;
