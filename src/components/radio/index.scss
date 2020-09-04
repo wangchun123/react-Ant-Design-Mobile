@@ -4,7 +4,7 @@
     .radio-wrapper {
       display: flex;
       align-items: center;
-      & > span {
+      .label-text {
         font-size: 12px;
         margin-left: 12px;
       }
@@ -17,17 +17,18 @@
       border-radius: 50%;
       &::after {
         content: '';
-        width: 8px;
-        height: 8px;
+        width: 50%;
+        height: 50%;
         position: absolute;
-        top: 8px;
-        left: 8px;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
         background: #1890ff;
         border-radius: 50%;
         opacity: 0;
       }
     }
+
     .radio-checked {
       position: relative;
       width: 16px;
@@ -36,16 +37,25 @@
       border-radius: 50%;
       &::after {
         content: '';
-        width: 8px;
-        height: 8px;
+        width: 50%;
+        height: 50%;
         position: absolute;
-        top: 8px;
-        left: 8px;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
         background: #1890ff;
         border-radius: 50%;
         animation: show 0.5s;
       }
+    }
+
+    .middle {
+      width: 20px;
+      height: 20px;
+    }
+    .large {
+      width: 30px;
+      height: 30px;
     }
   }
 }

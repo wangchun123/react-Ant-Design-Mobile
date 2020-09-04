@@ -32,8 +32,9 @@ export default class index extends Component {
           dataSource={this.state.dataSource}
           defaultValue={this.state.defaultValue}
           onChange={(val) => console.log(val)}
-          radioLayout="inline"
+          // radioLayout="inline"
           itemClassName="some"
+          size='large'
         ></Radio>
       </div>
     );

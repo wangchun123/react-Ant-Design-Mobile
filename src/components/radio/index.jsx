@@ -20,6 +20,7 @@ class Radio extends Component {
     dataSource: [],
     itemClassName: '',
     defaultValue: '',
+    size: 'small',
   };
 
   componentWillReceiveProps(nextProps) {
@@ -89,7 +90,7 @@ class Radio extends Component {
 
   render() {
     const { dataSource } = this.state;
-    const { itemClassName, radioLayout } = this.props;
+    const { itemClassName, radioLayout, size } = this.props;
 
     return (
       <>
@@ -108,9 +109,13 @@ class Radio extends Component {
               >
                 <div className="radio-wrapper">
                   <div
-                    className={!item.check ? 'radio-default' : 'radio-checked '}
+                    className={
+                      !item.check
+                        ? `radio-default ${size}`
+                        : `radio-checked ${size}`
+                    }
                   ></div>
-                  <span>{item.label}</span>
+                  <span className={`label-text `}>{item.label}</span>
                 </div>
               </div>
             );
@@ -127,6 +132,7 @@ Radio.propTypes = {
   itemClassName: PropTypes.string,
   radioLayout: PropTypes.oneOf(['horizontal', 'inline']),
   defaultValue: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'middle', 'large']),
 };
 
 export default Radio;
