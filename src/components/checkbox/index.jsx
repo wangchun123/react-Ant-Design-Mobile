@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Classnames from 'classnames';
 import './index.scss';
 
 const radioLayoutInline = {
@@ -21,6 +22,7 @@ class Checkbox extends Component {
     itemClassName: '',
     defaultValue: '',
     size: 'small',
+    disabled: false,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -88,12 +90,16 @@ class Checkbox extends Component {
 
   render() {
     const { dataSource } = this.state;
-    const { itemClassName, radioLayout, size } = this.props;
+    const { itemClassName, radioLayout, size, disabled } = this.props;
+
+    const checkboxClassNames = Classnames({
+      'checkbox-group': true,
+    });
 
     return (
       <>
         <div
-          className="checkbox-group"
+          className={checkboxClassNames}
           style={radioLayout === 'inline' ? radioLayoutInline : {}}
         >
           {dataSource.map((item, index) => {
@@ -131,6 +137,7 @@ Checkbox.propTypes = {
   radioLayout: PropTypes.oneOf(['horizontal', 'inline']),
   defaultValue: PropTypes.string,
   size: PropTypes.oneOf(['small', 'middle', 'large']),
+  disabled: PropTypes.bool,
 };
 
 export default Checkbox;
