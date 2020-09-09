@@ -21,6 +21,7 @@ class Radio extends Component {
     itemClassName: '',
     defaultValue: '',
     size: 'small',
+    value: '',
   };
 
   componentWillReceiveProps(nextProps) {
@@ -30,15 +31,31 @@ class Radio extends Component {
         check: false,
       }));
 
-      if (this.props.defaultValue != nextProps.defaultValue) {
+      if (!nextProps.value) {
+        if (this.props.defaultValue != nextProps.defaultValue) {
+          dealDataSource.forEach((item) => {
+            if (item.value == nextProps.defaultValue) {
+              item.check = true;
+            }
+          });
+        } else {
+          dealDataSource.forEach((item) => {
+            if (item.value == this.props.defaultValue) {
+              item.check = true;
+            }
+          });
+        }
+      }
+
+      if (this.props.value != nextProps.value) {
         dealDataSource.forEach((item) => {
-          if (item.value == nextProps.defaultValue) {
+          if (item.value == nextProps.value) {
             item.check = true;
           }
         });
-      } else {
+      }else{
         dealDataSource.forEach((item) => {
-          if (item.value == this.props.defaultValue) {
+          if (item.value == this.props.value) {
             item.check = true;
           }
         });
@@ -91,7 +108,8 @@ class Radio extends Component {
   render() {
     const { dataSource } = this.state;
     const { itemClassName, radioLayout, size } = this.props;
-
+    console.log('组件', this.props);
+    console.log('组件', dataSource);
     return (
       <>
         <div
@@ -132,6 +150,7 @@ Radio.propTypes = {
   itemClassName: PropTypes.string,
   radioLayout: PropTypes.oneOf(['horizontal', 'inline']),
   defaultValue: PropTypes.string,
+  value: PropTypes.string,
   size: PropTypes.oneOf(['small', 'middle', 'large']),
 };
 

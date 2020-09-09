@@ -15,7 +15,7 @@ class index extends Component {
   componentDidMount() {
     // console.log('this.props', this.props.form.getFieldsValue());
 
-    console.log('this.props', this.props.form.setFieldsValue({ age: '6' }));
+    // console.log('this.props', this.props.form.setFieldsValue({ age: '6' }));
 
     this.setState({
       dataSource: [
@@ -35,19 +35,33 @@ class index extends Component {
       <form>
         <Radio
           dataSource={this.state.dataSource}
-          // value={this.state.defaultValue}
+          // defaultValue={this.state.defaultValue}
+          // value="1"
           onChange={(val) => console.log(val)}
           // radioLayout="inline"
           itemClassName="some"
           size="large"
-          {...this.props.form.getFieldProps('age')}
+          {...this.props.form.getFieldProps('age', {
+            // initialValue: '6',
+            rules: [
+              { required: true, message: '请选择radio' },
+              // { validator: this.validateAccount },
+            ],
+          })}
         ></Radio>
         <button
           onClick={() =>
-            console.log('this.props', this.props.form.getFieldsValue())
+            this.props.form.validateFields({ force: true }, (error) => {
+              if (!error) {
+                console.log(this.props.form.getFieldsValue());
+              } else {
+                alert('校验错误',  this.props.form.getFieldError('age').join(','));
+                console.log(this.props.form.getFieldError('age').join(','))
+              }
+            })
           }
         >
-        提交
+          提交
         </button>
       </form>
     );
