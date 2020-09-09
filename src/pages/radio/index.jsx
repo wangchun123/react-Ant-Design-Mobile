@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Radio from '@/components/radio';
+import { Modal } from 'antd-mobile';
 import { createForm } from 'rc-form';
 import './index.scss';
+
+const alert = Modal.alert;
+
 class index extends Component {
   constructor(props) {
     super(props);
@@ -55,8 +59,11 @@ class index extends Component {
               if (!error) {
                 console.log(this.props.form.getFieldsValue());
               } else {
-                alert('校验错误',  this.props.form.getFieldError('age').join(','));
-                console.log(this.props.form.getFieldError('age').join(','))
+                alert(
+                  '校验错误',
+                  this.props.form.getFieldError('age').join(','),
+                );
+                console.log(this.props.form.getFieldError('age').join(','));
               }
             })
           }
