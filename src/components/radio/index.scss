@@ -15,35 +15,23 @@
       height: 16px;
       border: 1px solid #d9d9d9;
       border-radius: 50%;
-      &::after {
-        content: '';
-        width: 50%;
-        height: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #1890ff;
-        border-radius: 50%;
-        opacity: 0;
-      }
     }
 
     .radio-checked {
       position: relative;
       width: 16px;
       height: 16px;
-      border: 1px solid #1890ff;
+      background: #1890ff;
       border-radius: 50%;
       &::after {
         content: '';
-        width: 50%;
-        height: 50%;
+        width: 35%;
+        height: 35%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #1890ff;
+        background: white;
         border-radius: 50%;
         animation: show 0.5s;
       }
