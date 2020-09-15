@@ -14,26 +14,14 @@
       width: 16px;
       height: 16px;
       border: 1px solid #d9d9d9;
-      &::after {
-        content: '';
-        width: 25%;
-        height: 50%;
-        position: absolute;
-        top: 10%;
-        left: 30%;
-        border-color: #1890ff;
-        border-style: solid;
-        border-width: 0 3px 5px 0;
-        transform: rotate(45deg);
-        opacity: 0;
-      }
+      box-sizing: border-box;
     }
 
     .radio-checked {
       position: relative;
       width: 16px;
       height: 16px;
-      border: 1px solid #1890ff;
+      background: #1890ff;
       &::after {
         content: '';
         width: 25%;
@@ -41,9 +29,9 @@
         position: absolute;
         top: 10%;
         left: 30%;
-        border-color: #1890ff;
+        border-color: white;
         border-style: solid;
-        border-width: 0 3px 5px 0;
+        border-width: 0 2px 3px 0;
         transform: rotate(45deg);
         animation: show 0.5s;
       }
