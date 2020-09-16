@@ -26,21 +26,21 @@ class Checkbox extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.dataSource != nextProps.dataSource) {
+    if (this.props.dataSource !==nextProps.dataSource) {
       let dealDataSource = nextProps.dataSource.map((item) => ({
         ...item,
         check: false,
       }));
 
-      if (this.props.defaultValue != nextProps.defaultValue) {
+      if (this.props.defaultValue !==nextProps.defaultValue) {
         dealDataSource.forEach((item) => {
-          if (item.value == nextProps.defaultValue) {
+          if (item.value === nextProps.defaultValue) {
             item.check = true;
           }
         });
       } else {
         dealDataSource.forEach((item) => {
-          if (item.value == this.props.defaultValue) {
+          if (item.value === this.props.defaultValue) {
             item.check = true;
           }
         });
@@ -59,7 +59,7 @@ class Checkbox extends Component {
     }));
 
     dealDataSource.forEach((item) => {
-      if (item.value == dataComeFrom.defaultValue) {
+      if (item.value === dataComeFrom.defaultValue) {
         item.check = true;
       }
     });
