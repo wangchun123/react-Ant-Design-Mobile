@@ -7,6 +7,7 @@ const pageRouter = [
   { title: 'Checkbox', url: '/checkbox' },
   { title: 'Radio', url: '/radio' },
   { title: 'BaiduMap', url: '/baiduMap' },
+  { title: 'VerificationCode', url: '/verificationCode' },
 ];
 
 function App({ history }) {

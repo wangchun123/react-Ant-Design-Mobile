@@ -5,6 +5,7 @@ import Pdf from '@/pages/pdf';
 import BaiduMap from '@/pages/testMap';
 import Radio from '@/pages/radio';
 import Checkbox from '@/pages/checkbox';
+import VerificationCode from '@/pages/verificationCode';
 
 const Routers = () => {
   return (
@@ -14,6 +15,7 @@ const Routers = () => {
       <Route path="/baiduMap" exact={true} component={BaiduMap} />
       <Route path="/radio" exact={true} component={Radio} />
       <Route path="/checkbox" exact={true} component={Checkbox} />
+      <Route path="/verificationCode" exact={true} component={VerificationCode} />
     </HashRouter>
   );
 };
