@@ -71,6 +71,7 @@ export default class index extends Component {
             onChange={(val) => this._onChange(val)}
             maxLength={11}
             trim={true}
+            placeholder="请输入电话号码"
             className="cln-input"
           />
           <div
