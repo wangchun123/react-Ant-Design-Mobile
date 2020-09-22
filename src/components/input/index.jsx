@@ -13,6 +13,7 @@ class Input extends Component {
     value: '',
     className: '',
     maxLength: 1000000,
+    trim: false,
   };
 
   constructor(props) {
@@ -32,9 +33,17 @@ class Input extends Component {
   }
 
   _onChange = (val) => {
-    this.setState({
-      value: val,
-    });
+    const { trim } = this.props;
+
+    if (trim) {
+      this.setState({
+        value: val.replace(/\s+/g, ''),
+      });
+    } else {
+      this.setState({
+        value: val,
+      });
+    }
   };
 
   render() {
@@ -77,6 +86,7 @@ Input.propTypes = {
   value: PropTypes.string,
   className: PropTypes.string,
   maxLength: PropTypes.number,
+  trim: PropTypes.bool,
 };
 
 export default Input;
