@@ -8,6 +8,7 @@ const pageRouter = [
   { title: 'Radio', url: '/radio' },
   { title: 'BaiduMap', url: '/baiduMap' },
   { title: 'VerificationCode', url: '/verificationCode' },
+  { title: 'Upload', url: '/upload' },
 ];
 
 function App({ history }) {
