@@ -11,6 +11,8 @@
       height: 400px;
       box-sizing: border-box;
       padding: 10px 10px;
+      border-radius: 4%;
+      overflow: hidden;
     }
     & > img:nth-child(2) {
       width: 20%;
