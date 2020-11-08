@@ -9,6 +9,7 @@ const pageRouter = [
   { title: 'BaiduMap', url: '/baiduMap' },
   { title: 'VerificationCode', url: '/verificationCode' },
   { title: 'Upload', url: '/upload' },
+  { title: 'AntV F2', url: '/antVF2' },
 ];
 
 function App({ history }) {
