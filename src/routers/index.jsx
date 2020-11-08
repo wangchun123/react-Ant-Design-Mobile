@@ -1,12 +1,13 @@
-import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
-import App from '@/pages/index/App';
-import Pdf from '@/pages/pdf';
-import BaiduMap from '@/pages/testMap';
-import Radio from '@/pages/radio';
-import Checkbox from '@/pages/checkbox';
-import VerificationCode from '@/pages/verificationCode';
-import Upload from '@/pages/upload';
+import React from "react";
+import { HashRouter, Route } from "react-router-dom";
+import App from "@/pages/index/App";
+import Pdf from "@/pages/pdf";
+import BaiduMap from "@/pages/testMap";
+import Radio from "@/pages/radio";
+import Checkbox from "@/pages/checkbox";
+import VerificationCode from "@/pages/verificationCode";
+import Upload from "@/pages/upload";
+import AntVF2 from "@/pages/antvF2";
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
         component={VerificationCode}
       />
       <Route path="/upload" exact={true} component={Upload} />
+      <Route path="/antVF2" exact={true} component={AntVF2} />
     </HashRouter>
   );
 };
