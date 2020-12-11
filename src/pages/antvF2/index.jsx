@@ -30,6 +30,8 @@ export default class AntVF2 extends Component {
   }
   render() {
     const { barChartData } = this.state;
+
+    console.log('object', 'test---')
     return (
       <div className="contents">
         <p>条形图</p>
