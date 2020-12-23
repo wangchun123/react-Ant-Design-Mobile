@@ -8,6 +8,7 @@ import Checkbox from "@/pages/checkbox";
 import VerificationCode from "@/pages/verificationCode";
 import Upload from "@/pages/upload";
 import AntVF2 from "@/pages/antvF2";
+import MoreDetail from "@/pages/moreDetail";
 
 const Routers = () => {
   return (
@@ -24,6 +25,7 @@ const Routers = () => {
       />
       <Route path="/upload" exact={true} component={Upload} />
       <Route path="/antVF2" exact={true} component={AntVF2} />
+      <Route path="/moreDetail" exact={true} component={MoreDetail} />
     </HashRouter>
   );
 };

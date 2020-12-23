@@ -10,6 +10,7 @@ const pageRouter = [
   { title: 'VerificationCode', url: '/verificationCode' },
   { title: 'Upload', url: '/upload' },
   { title: 'AntV F2', url: '/antVF2' },
+  { title: 'MoreDetail', url: '/moreDetail' },
 ];
 
 function App({ history }) {

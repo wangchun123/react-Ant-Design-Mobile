@@ -1,0 +1,15 @@
+.more-detail {
+  font-size: 14px;
+  .item-content-open {
+    display: flex;
+    & > div:nth-child(2) {
+      color: red;
+    }
+  }
+  .item-content-more {
+    & > div:nth-child(2) {
+      color: red;
+      text-align: center;
+    }
+  }
+}
