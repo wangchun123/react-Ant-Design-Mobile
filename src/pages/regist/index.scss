@@ -1,0 +1,37 @@
+.app {
+    padding: 30px;
+  .top_icon{
+      height: 200px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{width: 200px;height: 200px;}
+  }
+  .help{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      &>div{
+          font-weight:800;
+          color: #624b2f
+      }
+  }
+  .btn{
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      min-height: 70px;
+      color: #fff;
+      font-weight:bold;
+      background: linear-gradient(to right,#ff9500, #F22E00 50%,  #F22E00 100%);
+  }
+  .text_error{
+    color: #F22E00;
+    margin-top: 10px;
+  }
+}
+
+

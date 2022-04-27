@@ -1,0 +1,22 @@
+.custom_input{
+    display: flex;
+    background: #f5f5f5;
+    margin-top: 50px;
+    input{
+        border: none;
+        border-bottom: 1px solid #F22E00;
+        flex: 1;
+        background: #f5f5f5;
+        min-height: 50px;
+        border-radius: 0;
+        caret-color:#F22E00;
+        &::placeholder {
+            font-weight: 800;
+         }
+    }
+    img{
+        width: 30px;
+        height: 30px;
+        margin-left: -40px;
+    }
+}

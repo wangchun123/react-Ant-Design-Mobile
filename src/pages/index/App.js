@@ -11,6 +11,7 @@ const pageRouter = [
   { title: 'Upload', url: '/upload' },
   { title: 'AntV F2', url: '/antVF2' },
   { title: 'MoreDetail', url: '/moreDetail' },
+  { title: '面试题', url: '/regist' },
 ];
 
 function App({ history }) {
