@@ -2,6 +2,7 @@
   "name": "view-pdf",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wangchun123.github.io/react-Ant-Design-Mobile/",
   "dependencies": {
     "@antv/f2": "^3.7.8",
     "@babel/core": "7.9.0",
@@ -78,7 +79,9 @@
     "start": "node scripts/start.js",
     "analyze": "source-map-explorer build/static/js/main.*",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy":"gh-pages -d build",
+    "predeploy":"npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -150,5 +153,7 @@
       "react-app"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
