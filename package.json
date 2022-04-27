@@ -2,7 +2,7 @@
   "name": "view-pdf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wangchun123.github.io/react-Ant-Design-Mobile/",
+  "homepage": "./",
   "dependencies": {
     "@antv/f2": "^3.7.8",
     "@babel/core": "7.9.0",
